@@ -7,16 +7,33 @@ package br.com.djun.dojo;
  */
 public class Problem2 {
     public static void main(String[] args){
-        System.out.print(new Problem2().getValueFromFibonacciPosition(3));
+        System.out.println(new Problem2().getSum(4000000));
     }
 
-    public long getValueFromFibonacciPosition(long position){
-        long[] aux = {1,2};
-        if(position <= 2 ){
-            return aux[(int)position-1];
+    public long getSum(long limit){
+        if(limit == 1){
+            return 0;
+        }
+        if(limit == 2){
+            return 2;
         }
 
+        long[] aux = {1,2,0};
+        long count = 2;
 
-        return 0;
+        while(true) {
+            aux[2] = aux[0] + aux[1];
+
+            if(aux[2] > limit){
+                break;
+            }
+            if(aux[2] % 2 == 0) {
+                count += aux[2];
+            }
+            aux[0] = aux[1];
+            aux[1] = aux[2];
+        }
+
+        return count;
     }
 }
