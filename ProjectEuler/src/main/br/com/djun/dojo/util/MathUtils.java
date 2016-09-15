@@ -6,7 +6,8 @@ public class MathUtils {
         if(number == 0 || number == 1){
             return false;
         }
-        for(int i = 2 ; i < number; i++){
+        long aux = number/2;
+        for(long i = 2 ; i <= aux; i++){
             if(isDivided(number,i)){
                 return false;
             }
