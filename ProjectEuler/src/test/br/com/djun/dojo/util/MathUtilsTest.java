@@ -3,6 +3,8 @@ package br.com.djun.dojo.util;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class MathUtilsTest {
     private MathUtils utils;
 
@@ -39,5 +41,20 @@ public class MathUtilsTest {
         Assert.assertFalse(utils.isPrime(1));
         Assert.assertFalse(utils.isPrime(6));
         Assert.assertFalse(utils.isPrime(10));
+    }
+
+    @Test
+    public void getDivisors(){
+        List<Integer> list = utils.getDivisors(10);
+
+        Assert.assertEquals(2,list.get(0).intValue());
+        Assert.assertEquals(5,list.get(1).intValue());
+
+        list = utils.getDivisors(100);
+
+        Assert.assertEquals(2,list.get(0).intValue());
+        Assert.assertEquals(2,list.get(1).intValue());
+        Assert.assertEquals(5,list.get(2).intValue());
+        Assert.assertEquals(5,list.get(3).intValue());
     }
 }
