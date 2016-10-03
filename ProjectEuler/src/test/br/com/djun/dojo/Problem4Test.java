@@ -15,6 +15,10 @@ public class Problem4Test {
         p = new Problem4();
     }
 
+    @Test
+    public void getLargestPalindrome(){
+        Assert.assertEquals(9009,p.getLargestPalindrome(2));
+    }
 
     @Test
     public void createPalindrome(){
@@ -29,5 +33,20 @@ public class Problem4Test {
         Assert.assertEquals("1",p.invertNumber(1));
         Assert.assertEquals("123",p.invertNumber(321));
         Assert.assertEquals("0001",p.invertNumber(1000));
+    }
+
+
+    @Test
+    public void isProductByTwoNumbersWithSize(){
+        Assert.assertTrue(p.isProductByTwoNumbersWithSize(1,1));
+        Assert.assertTrue(p.isProductByTwoNumbersWithSize(1,10));
+        Assert.assertTrue(p.isProductByTwoNumbersWithSize(2,100));
+        Assert.assertTrue(p.isProductByTwoNumbersWithSize(2,9009));
+    }
+
+    @Test
+    public void isNotProductByTwoNumbersWithSize(){
+        Assert.assertFalse(p.isProductByTwoNumbersWithSize(2,10));
+        Assert.assertFalse(p.isProductByTwoNumbersWithSize(3,10));
     }
 }
