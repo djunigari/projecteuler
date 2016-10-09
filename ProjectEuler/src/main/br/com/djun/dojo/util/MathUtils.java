@@ -1,7 +1,9 @@
 package br.com.djun.dojo.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MathUtils {
 
@@ -28,12 +30,16 @@ public class MathUtils {
         return false;
     }
 
-    public List<Integer> getDivisors(int n){
-        List<Integer> list = new ArrayList<>();
+    public Map<Integer,Integer> getDivisors(int n){
+        Map<Integer,Integer> list = new HashMap<>();
         for(int i = 2; n > 1; i++){
+            int count = 0;
             while(n % i == 0){
-                list.add(i);
+                count++;
                 n = n/i;
+            }
+            if(count > 0){
+                list.put(i,count);
             }
         }
         return list;

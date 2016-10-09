@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 public class MathUtilsTest {
     private MathUtils utils;
@@ -45,16 +46,15 @@ public class MathUtilsTest {
 
     @Test
     public void getDivisors(){
-        List<Integer> list = utils.getDivisors(10);
+        Map<Integer, Integer> list = utils.getDivisors(10);
 
-        Assert.assertEquals(2,list.get(0).intValue());
-        Assert.assertEquals(5,list.get(1).intValue());
+        Assert.assertEquals(1,list.get(2).intValue());
+        Assert.assertEquals(1,list.get(5).intValue());
 
         list = utils.getDivisors(100);
 
-        Assert.assertEquals(2,list.get(0).intValue());
-        Assert.assertEquals(2,list.get(1).intValue());
-        Assert.assertEquals(5,list.get(2).intValue());
-        Assert.assertEquals(5,list.get(3).intValue());
+        Assert.assertEquals(2,list.get(2).intValue());
+        Assert.assertEquals(2,list.get(5).intValue());
+
     }
 }
