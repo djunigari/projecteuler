@@ -48,6 +48,10 @@ public class Problem9 {
         while(c > b){
             b = n - c -1;
             a = 1;
+            if(b > c){
+                b = c - 1;
+                a = n - c - b;
+            }
             while(b > a){
                 a++;
                 b--;
