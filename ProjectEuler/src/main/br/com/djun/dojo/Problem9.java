@@ -41,12 +41,21 @@ public class Problem9 {
     public long getProduct(int n){
         long result = 0;
 
-        for(int c = n - 3, rest = 3; c > rest/2+1 ;c--, rest++){
-            for(int a = 1, b = rest-a ; a < b; a++, b--){
+        int a = 1;
+        int b = 2;
+        int c = n- a - b;
+
+        while(c > b){
+            b = n - c -1;
+            a = 1;
+            while(b > a){
+                a++;
+                b--;
                 if((a*a + b*b) == c*c){
                     return a*b*c;
                 }
             }
+            c--;
         }
 
         return result;
