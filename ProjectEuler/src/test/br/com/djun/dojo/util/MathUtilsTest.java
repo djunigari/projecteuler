@@ -3,8 +3,10 @@ package br.com.djun.dojo.util;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class MathUtilsTest {
     private MathUtils utils;
@@ -46,15 +48,26 @@ public class MathUtilsTest {
 
     @Test
     public void getDivisors(){
-        Map<Integer, Integer> list = utils.getDivisors(10);
+        Map<Integer, Integer> list = utils.getDivisors(17);
 
-        Assert.assertEquals(1,list.get(2).intValue());
+        Assert.assertEquals(1,list.get(1).intValue());
+        Assert.assertEquals(1,list.get(17).intValue());
+
+        list = utils.getDivisors(10);
+
         Assert.assertEquals(1,list.get(5).intValue());
+        Assert.assertEquals(1,list.get(2).intValue());
 
         list = utils.getDivisors(100);
 
         Assert.assertEquals(2,list.get(2).intValue());
         Assert.assertEquals(2,list.get(5).intValue());
+    }
 
+    @Test
+    public void getAmountDivisors(){
+        Assert.assertEquals(2,utils.getAmountDivisors(17));
+        Assert.assertEquals(4,utils.getAmountDivisors(10));
+        Assert.assertEquals(9,utils.getAmountDivisors(100));
     }
 }
