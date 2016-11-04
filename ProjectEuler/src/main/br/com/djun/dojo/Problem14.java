@@ -1,5 +1,8 @@
 package br.com.djun.dojo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  The following iterative sequence is defined for the set of positive integers:
 
@@ -16,4 +19,33 @@ package br.com.djun.dojo;
  NOTE: Once the chain starts the terms are allowed to go above one million.
  */
 public class Problem14 {
+    public static void main(String[] args){
+        System.out.println(new Problem14().getTheLongestChain(1000000));
+    }
+
+    public long getTheLongestChain(long n){;
+        List<Long> longestList = new ArrayList<>();
+        List<Long> list = null;
+        for(long i = n; i > 1 ; i --){
+
+            list = getList(i);
+            if(longestList.size() < list.size()){
+                longestList = list;
+            }
+        }
+        return longestList.get(0);
+    }
+
+    public List<Long> getList(long n){
+        List<Long> list = new ArrayList<>();
+        list.add(n);
+        while(n > 1){
+            if(n % 2 == 0){
+                list.add(n = n/2);
+            }else{
+                list.add(n = 3*n + 1);
+            }
+        }
+        return list;
+    }
 }
