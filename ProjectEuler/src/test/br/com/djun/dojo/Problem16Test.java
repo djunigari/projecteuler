@@ -10,12 +10,12 @@ import java.math.BigDecimal;
 
  What is the sum of the digits of the number 2^1000?
  */
-public class Problem15Test {
+public class Problem16Test {
 
-    private Problem15 p;
+    private Problem16 p;
 
-    public Problem15Test(){
-        p = new Problem15();
+    public Problem16Test(){
+        p = new Problem16();
     }
 
     @Test

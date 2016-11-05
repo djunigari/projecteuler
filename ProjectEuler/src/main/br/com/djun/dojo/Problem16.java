@@ -8,9 +8,9 @@ import java.math.BigDecimal;
 
  What is the sum of the digits of the number 2^1000?
  */
-public class Problem15 {
+public class Problem16 {
     public static void main(String[] args){
-        System.out.println(new Problem15().getSumOfNumeberFromExponent(1000));
+        System.out.println(new Problem16().getSumOfNumeberFromExponent(1000));
     }
 
     public long getSumOfNumeberFromExponent(int n){
